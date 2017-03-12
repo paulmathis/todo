@@ -8,15 +8,15 @@
     </head>
     <body>
         <div class="container">
-            <div class="todo">
+            <div id="todo" class="todo">
                 <div class="search bar">
                     <input type="text" placeholder="Search">
                 </div>
                 <div id="tasks">
                     <div class="task bar">
-                        <div class="circle"></div>
+                        <div class="circle"><i class="fa fa-check" aria-hidden="true" style="font-size: 25px;"></i></div>
                         <span>Task</span>
-                        <div class="close">x</div>
+                        <div class="close" onclick='removeParent(this)'>x</div>
                     </div>
                 </div>
                 <div class="footer bar">

@@ -63,7 +63,6 @@ input {
 
 .close {
     margin-left: auto;
-    background-color: red;
 }
 .hidden {
     display: none;
