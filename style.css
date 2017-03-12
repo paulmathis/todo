@@ -10,8 +10,48 @@ body {
 }
 
 .todo {
-    background-color: red;
+    border: 1px solid black;
     width: 400px;
     height: 500px;
+    border-radius: 5px;
 }
 
+.search {
+    background-color:grey;
+    justify-content: center;
+}
+
+.tasks {
+    height: 400px;
+}
+.bar {  
+    height: 50px;   
+    display: flex;  
+}
+
+.task {
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.footer {
+    border-top: 1px solid black;
+    font-size: 1.5em;
+    padding-right: 10px;
+    align-items: center;
+}
+input {
+    width: 100%;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.circle {
+    border: 1px solid blue;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 10px;
+}
