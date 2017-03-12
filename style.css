@@ -54,4 +54,12 @@ input {
     width: 30px;
     border-radius: 50%;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.hidden {
+    display: none;
 }
