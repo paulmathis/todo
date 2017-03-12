@@ -21,7 +21,7 @@ body {
     justify-content: center;
 }
 
-.tasks {
+#tasks {
     height: 400px;
 }
 .bar {  
@@ -34,6 +34,7 @@ body {
     font-size: 1.5em;
     padding-right: 10px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .footer {
@@ -60,6 +61,10 @@ input {
     font-size: 40px;
 }
 
+.close {
+    margin-left: auto;
+    background-color: red;
+}
 .hidden {
     display: none;
 }
