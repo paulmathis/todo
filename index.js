@@ -40,10 +40,10 @@ window.onload = function(){
                         var checkMark = this.querySelector("i");
                         checkMark.classList.toggle("hidden");
                         var parent = this.parentElement;
+                        parent.classList.toggle("checked");
                         if ($("#showAll").classList.contains("active")) {
                             //do nothing
                         } else {
-                            parent.classList.toggle("checked");
                             parent.classList.toggle("hidden");
                         }
                         
