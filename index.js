@@ -39,7 +39,14 @@ window.onload = function(){
                     function addCheck(ele) {
                         var checkMark = this.querySelector("i");
                         checkMark.classList.toggle("hidden");
-                        this.parentElement.classList.toggle("checked");
+                        var parent = this.parentElement;
+                        if ($("#showAll").classList.contains("active")) {
+                            //do nothing
+                        } else {
+                            parent.classList.toggle("checked");
+                            parent.classList.toggle("hidden");
+                        }
+                        
                     }
                     taskCircle.addEventListener("click", addCheck);
 
@@ -66,8 +73,14 @@ window.onload = function(){
             switch (pick) {
                 case "all":
                     task.classList.remove("hidden");
+                    $("#showAll").classList.add("active");
+                    $("#showIncomplete").classList.remove("active");
+                    $("#showComplete").classList.remove("active");
                     break;
                 case "complete":
+                    $("#showAll").classList.remove("active");
+                    $("#showIncomplete").classList.remove("active");
+                    $("#showComplete").classList.add("active");
                     if(task.classList.contains("checked")){
                         task.classList.remove("hidden");
                     } else {
@@ -75,6 +88,9 @@ window.onload = function(){
                     }
                     break;
                 case "incomplete":
+                    $("#showAll").classList.remove("active");
+                    $("#showIncomplete").classList.add("active");
+                    $("#showComplete").classList.remove("active");
                     if(!task.classList.contains("checked")){
                         task.classList.remove("hidden");
                     } else {
@@ -97,6 +113,22 @@ window.onload = function(){
         show("incomplete");
     });
 
+    function searchTasks() {
+        var search = this.value.toUpperCase();
+        var tasks = $("#tasks").querySelectorAll("span");
+        for(var i=0; i<tasks.length; i++) {
+            var compare = tasks[i].innerHTML.toUpperCase();
+            console.log()
+            if (search.substring(0, search.length) == compare.substring(0, search.length)) {
+                tasks[i].parentElement.classList.remove("hidden");
+            } else if (this.value == "") {
+                tasks[i].parentElement.classList.remove("hidden");
+            }else {
+                tasks[i].parentElement.classList.add("hidden");
+            }
+        }
+    }
+    $("#search").addEventListener("keyup", searchTasks);
 };
 
 
