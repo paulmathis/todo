@@ -15,7 +15,7 @@
                 <div id="tasks">
                     <div class="task bar">
                         <div class="circle" onclick='addCheck(this)'>
-                                <i class="fa fa-check check" aria-hidden="true"></i>
+                                <i class="fa fa-check check hidden" aria-hidden="true"></i>
                         </div>
                         <span>Task</span>
                         <div class="close" onclick='removeParent(this)'>x</div>
@@ -23,11 +23,11 @@
                 </div>
                 <div class="footer bar">
                     <input id="addTaskInput" class="hidden" type="text" placeholder="Enter Task">
-                    <div id="addTaskButton" class="circle"> + </div>
+                    <div id="addTaskButton" class="circle" onclick="toggleFooter()"> + </div>
                     <div>
-                        <button id="showAll">All</button>
-                        <button id="showComplete">Complete</button>
-                        <button id="showIncomplete">Incomplete</button>
+                        <button id="showAll" onclick="show('all')">All</button>
+                        <button id="showComplete" onclick="show('complete')">Complete</button>
+                        <button id="showIncomplete" onclick="show('incomplete')">Incomplete</button>
                     </div>
                 </div>
             </div>
