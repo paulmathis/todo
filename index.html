@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <div id="todo" class="todo">
-                <div class="search bar">
+                <div id="search" class="search bar">
                     <input type="text" placeholder="Search">
                 </div>
                 <div id="tasks">
@@ -18,16 +18,16 @@
                                 <i class="fa fa-check check hidden" aria-hidden="true"></i>
                         </div>
                         <span>Task</span>
-                        <div class="close" onclick='removeParent(this)'>x</div>
+                        <div class="close">x</div>
                     </div>
                 </div>
                 <div class="footer bar">
                     <input id="addTaskInput" class="hidden" type="text" placeholder="Enter Task">
-                    <div id="addTaskButton" class="circle" onclick="toggleFooter()"> + </div>
+                    <div id="addTaskButton" class="circle"> + </div>
                     <div>
-                        <button class="view" id="showAll" onclick="show('all')">All</button>
-                        <button class="view" id="showComplete" onclick="show('complete')">Complete</button>
-                        <button class="view" id="showIncomplete" onclick="show('incomplete')">Incomplete</button>
+                        <button class="view" id="showAll">All</button>
+                        <button class="view" id="showComplete">Complete</button>
+                        <button class="view" id="showIncomplete">Incomplete</button>
                     </div>
                 </div>
             </div>
