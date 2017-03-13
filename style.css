@@ -71,6 +71,10 @@ i.check {
     font-size: 25px;
 }
 
+/*i {
+    pointer-events: none
+}*/
+
 .close {
     margin-left: auto;
 }

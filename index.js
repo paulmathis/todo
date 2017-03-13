@@ -1,16 +1,24 @@
 window.onload = function(){
-
+    var taskCheckCircles = [];
+    
     //Take text input value and add as a new task
     $("#addTaskInput").addEventListener("keydown", function(e){
         if (event.keyCode == 13) {        
             if (this.value != "") {
                 addTask(this.value);
+                taskCheckCircles = $("#tasks").querySelectorAll(".circle");
+                    for (i=taskCheckCircles.length-1; i<taskCheckCircles.length; i++) {
+                        taskCheckCircles[i].addEventListener("click", addCheck);
+                    }
             }
             this.value = "";
             toggleFooter();
 
         }
-    });   
+    });
+ 
+
+
 };
 
 //Add Task to List
@@ -18,7 +26,7 @@ function addTask(val) {
     var taskBar=document.createElement("div");
     taskBar.classList.add("task", "bar");
     var newTask = $("#tasks").appendChild(taskBar);
-    newTask.innerHTML = "<div class='circle' onclick='addCheck(this)'>\
+    newTask.innerHTML = "<div class='circle' "+">\
                             <i class='fa fa-check check hidden' aria-hidden='true'></i>\
                         </div>\
                         <span>"+val+"</span>\
@@ -27,9 +35,9 @@ function addTask(val) {
 
 //Add Check Mark
 function addCheck(ele) {
-    var checkMark = ele.querySelector("i");
+    var checkMark = this.querySelector("i");
     checkMark.classList.toggle("hidden");
-    ele.parentElement.classList.toggle("checked");
+    this.parentElement.classList.toggle("checked");
 }
 
 //Remove Parrent Element   
