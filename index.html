@@ -14,7 +14,9 @@
                 </div>
                 <div id="tasks">
                     <div class="task bar">
-                        <div class="circle"><i class="fa fa-check" aria-hidden="true" style="font-size: 25px;"></i></div>
+                        <div class="circle" onclick='addCheck(this)'>
+                                <i class="fa fa-check check" aria-hidden="true"></i>
+                        </div>
                         <span>Task</span>
                         <div class="close" onclick='removeParent(this)'>x</div>
                     </div>

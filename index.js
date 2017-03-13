@@ -24,14 +24,22 @@ window.onload = function(){
 
 //Add Task to List
 function addTask(val) {
-        var tasks = document.getElementById("tasks");
-        var taskBar=document.createElement("div");
-        taskBar.classList.add("task", "bar");
-        var newTask = tasks.appendChild(taskBar);
-        newTask.innerHTML = "<div class='circle'>\
-                            </div><span>"+val+"</span>\
-                            <div class='close' onclick='removeParent(this)'>x</div>";
-    }
+    var tasks = document.getElementById("tasks");
+    var taskBar=document.createElement("div");
+    taskBar.classList.add("task", "bar");
+    var newTask = tasks.appendChild(taskBar);
+    newTask.innerHTML = "<div class='circle' onclick='addCheck(this)'>\
+                            <i class='fa fa-check check hidden' aria-hidden='true'></i>\
+                        </div>\
+                        <span>"+val+"</span>\
+                        <div class='close' onclick='removeParent(this)'>x</div>";
+}
+
+//Add Check Mark
+function addCheck(ele) {
+    var checkMark = ele.querySelector("i");
+    checkMark.classList.toggle("hidden");
+}
 
 //Remove Parrent Element   
 function removeParent(ele) {
